@@ -27,9 +27,8 @@ function transform(file){
             return through(function (chunk) {
                 buffer += chunk;
             },function(){
-                console.log(buffer);
                 var parsed = jsonFm.parse(buffer);
-                parsed = JSON.stringify(parsed);
+                parsed = 'module.exports='+JSON.stringify(parsed);
                 this.queue(parsed);
                 this.queue(null);
             });
@@ -39,9 +38,8 @@ function transform(file){
             return through(function (chunk) {
                 buffer += chunk;
             },function(){
-                console.log(buffer);
                 var parsed = yamlFm.parse(buffer);
-                parsed = JSON.stringify(parsed);
+                parsed = 'module.exports='+JSON.stringify(parsed);
                 this.queue(parsed);
                 this.queue(null);
             });
