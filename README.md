@@ -21,3 +21,7 @@ console.log(page.body); // the body as a string (markdown, html, txt, whatever)
 ```
 
 No magic, but can be combined with something like bulkify for requiring folder(s) of files for bundling, which then become available as the parsed front matter files..
+
+# Demo with bulkify
+
+https://github.com/dazld/frontmatterify-demo
